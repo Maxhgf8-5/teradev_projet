@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FarmIQ — Smart Farming</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#e8ece7',
+            ink: '#112d34',
+            muted: '#748286',
+            green: '#a5cd48',
+            green2: '#7fae35',
+            dark: '#0c2931',
+          },
+          fontFamily: {
+            sans: ['"DM Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background: #d8ded8; }
+    a { text-decoration: none; color: inherit; }
+    .hero-grid-pattern {
+      background-image:
+        linear-gradient(rgba(255,255,255,.16) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.16) 1px, transparent 1px);
+      background-size: 70px 70px;
+      -webkit-mask-image: linear-gradient(90deg, black, transparent 85%);
+      mask-image: linear-gradient(90deg, black, transparent 85%);
+    }
+    .hero-overlay-gradient {
+      background:
+        linear-gradient(90deg, rgba(5,24,30,.96) 0%, rgba(7,28,34,.82) 34%, rgba(7,28,34,.22) 66%, rgba(7,28,34,.12) 100%),
+        linear-gradient(0deg, rgba(5,22,27,.55), transparent 42%);
+    }
+    .fake-farm-bg {
+      background:
+        linear-gradient(0deg, rgba(14,47,38,.62), transparent 60%),
+        radial-gradient(circle at 55% 25%, #bfe0ef 0 18%, transparent 19%),
+        linear-gradient(160deg, #91c9e7 0 42%, #8bb54b 43% 70%, #426b35 71%);
+    }
+    .contact-glow::after {
+      content: "";
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      right: -150px;
+      top: -180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(165,205,72,.23), transparent 65%);
+    }
+    .brand-icon-wrap {
+      position: relative;
+      width: 29px;
+      height: 29px;
+      display: inline-block;
+    }
+    .brand-icon-wrap::before,
+    .brand-icon-wrap::after {
+      content: "";
+      position: absolute;
+      border-radius: 100% 0 100% 0;
+      background: #a5cd48;
+    }
+    .brand-icon-wrap::before {
+      width: 13px;
+      height: 19px;
+      left: 2px;
+      top: 7px;
+      transform: rotate(-28deg);
+    }
+    .brand-icon-wrap::after {
+      width: 12px;
+      height: 17px;
+      right: 2px;
+      top: 2px;
+      transform: rotate(35deg);
+    }
+    .brand-icon-wrap i {
+      position: absolute;
+      width: 2px;
+      height: 21px;
+      background: white;
+      left: 14px;
+      top: 7px;
+      transform: rotate(25deg);
+      z-index: 2;
+      font-style: normal;
+    }
+  </style>
+</head>
+<body>
+  <div class="max-w-[1440px] mx-auto bg-bg overflow-hidden font-sans text-ink">
+
+    <!-- ========== HERO ========== -->
+    <section class="relative min-h-[900px] max-[650px]:min-h-[800px] overflow-hidden text-white rounded-b-[38px] max-[650px]:rounded-b-[24px] bg-[#102e36]" id="home">
+      <!-- Background image -->
+      <div class="absolute inset-0 bg-cover bg-center scale-[1.03]" style="background-image: url('images/robot-globe.jpg')"></div>
+      <!-- Overlay -->
+      <div class="absolute inset-0 hero-overlay-gradient"></div>
+      <!-- Grid pattern -->
+      <div class="absolute inset-0 opacity-[.13] hero-grid-pattern"></div>
+
+      <!-- Nav -->
+      <header class="relative z-[4] h-[105px] max-[650px]:h-[78px] px-[7%] max-[650px]:px-[6%] flex items-center justify-between border-b border-white/[.12]">
+        <a href="#home" class="flex items-center gap-[10px] font-display font-bold text-[23px]">
+          <span class="brand-icon-wrap"><i></i><b></b></span>
+          <span>Farm<span class="text-green">IQ</span></span>
+        </a>
+
+        <nav class="flex gap-[36px] max-[900px]:gap-[15px] ml-[100px] max-[900px]:ml-[20px] max-[650px]:hidden">
+          <a class="text-white text-xs font-medium" href="#home">Home</a>
+          <a class="text-white/[.56] text-xs font-medium hover:text-white transition" href="#solutions">Solutions</a>
+          <a class="text-white/[.56] text-xs font-medium hover:text-white transition" href="#technology">Technology</a>
+          <a class="text-white/[.56] text-xs font-medium hover:text-white transition" href="#about">How It Works</a>
+        </nav>
+
+        <a class="bg-white text-[#183036] py-[12px] px-[18px] rounded-full text-[11px] font-bold max-[650px]:hidden" href="#contact">
+          Contact Us <span class="text-green2 ml-[6px]">↗</span>
+        </a>
+      </header>
+
+      <!-- Hero content -->
+      <div class="relative z-[3] min-h-[660px] px-[7%] max-[650px]:px-[6%] pt-[75px] max-[650px]:pt-[55px] pb-[20px] grid grid-cols-2 max-[900px]:grid-cols-1 items-center">
+        <div class="mt-[-20px]">
+          <!-- Eyebrow -->
+          <div class="flex items-center gap-[9px] text-green text-[10px] font-bold tracking-[2px] mb-[25px]">
+            <span class="w-[24px] h-[1px] bg-green"></span>
+            SMART AGRICULTURE • AI • DATA
+          </div>
+
+          <h1 class="font-display text-[clamp(54px,6.2vw,91px)] max-[650px]:text-[51px] max-[650px]:tracking-[-3px] leading-[.91] tracking-[-5px] font-semibold">
+            SMART FARMING<br>
+            FOR A <em class="not-italic text-green">BETTER</em><br>
+            FUTURE.
+          </h1>
+
+          <p class="max-w-[440px] my-[30px] text-white/[.63] text-sm leading-[1.7]">
+            Empowering farmers with AI-powered insights,
+            smart sensors, and sustainable agricultural technology.
+          </p>
+
+          <a class="inline-flex items-center gap-[14px] bg-green text-[#183037] py-[13px] px-[19px] rounded-full text-xs font-bold hover:-translate-y-0.5 hover:brightness-110 transition-all" href="#solutions">
+            Get Started <span>↗</span>
+          </a>
+        </div>
+
+        <!-- Tech cards -->
+        <div class="relative h-[500px] max-[900px]:absolute max-[650px]:hidden max-[900px]:opacity-45 max-[900px]:[inset:240px_-15%_0_30%]">
+          <!-- AI Card -->
+          <div class="absolute z-[3] right-[5%] top-[5%] bg-[rgba(9,36,42,.72)] border border-white/[.17] backdrop-blur-[12px] rounded-[14px] py-4 px-[18px] shadow-[0_20px_50px_rgba(0,0,0,.2)]">
+            <small class="block text-white/[.45] text-[8px] tracking-[1px]">AI FARM ANALYTICS</small>
+            <strong class="block text-green font-display font-semibold text-[25px] my-[4px]">98.4%</strong>
+            <span class="block text-white/[.45] text-[8px] tracking-[1px]">prediction accuracy</span>
+          </div>
+
+          <!-- Field Status Card -->
+          <div class="absolute z-[3] left-[12%] bottom-[4%] bg-[rgba(9,36,42,.72)] border border-white/[.17] backdrop-blur-[12px] rounded-[14px] py-4 px-[18px] shadow-[0_20px_50px_rgba(0,0,0,.2)]">
+            <span class="flex items-center text-white/[.45] text-[8px] tracking-[1px]">
+              <span class="inline-block w-[6px] h-[6px] rounded-full bg-[#8de276] mr-[6px]"></span>
+              FIELD STATUS
+            </span>
+            <strong class="block text-white font-display font-semibold text-[17px] mt-[4px]">Optimal</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero footer -->
+      <div class="absolute z-[5] left-[7%] max-[650px]:left-[6%] right-[7%] max-[650px]:right-[6%] bottom-[34px] flex justify-between items-center">
+        <div class="flex items-center gap-[13px]">
+          <div class="text-[9px] tracking-[2px] text-green">✦ ✦ ✦</div>
+          <div>
+            <strong class="block text-xs">4.9/5</strong>
+            <span class="block text-white/[.43] text-[9px] mt-[3px]">Farmer Satisfaction</span>
+          </div>
+        </div>
+
+        <a class="text-[11px] flex items-center gap-[10px] text-white/[.75] max-[650px]:hidden" href="#about">
+          <span class="w-[29px] h-[29px] border border-white/35 grid place-items-center rounded-full text-[8px]">▶</span>
+          See Smart Farming in Action
+        </a>
+
+        <div class="text-[8px] tracking-[2px] text-white/[.38]">
+          SCROLL
+          <span class="text-green text-sm ml-[8px]">↓</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ABOUT ========== -->
+    <section class="py-[125px] max-[650px]:py-[85px] px-[9%] max-[650px]:px-[7%]" id="about">
+      <div class="text-[9px] tracking-[2px] text-[#8a9698] font-bold mb-[55px]">01 — ABOUT US</div>
+
+      <div class="grid grid-cols-[1.35fr_.65fr] max-[900px]:grid-cols-1 max-[900px]:gap-[30px] gap-[80px] items-end">
+        <h2 class="max-w-[820px] font-display text-[clamp(40px,4.7vw,67px)] leading-[1.02] tracking-[-3px] font-semibold">
+          At FarmIQ, we believe the future of <span class="text-[#88ae3b]">agriculture</span> lies in smart technology.
+        </h2>
+        <p class="text-muted text-[13px] leading-[1.8]">
+          We empower farmers with intelligent tools and real-time data
+          to improve productivity, reduce waste and build a more sustainable future.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-[1.4fr_.8fr_.8fr] max-[900px]:grid-cols-1 gap-[14px] mt-[75px] max-[650px]:mt-[50px]">
+        <!-- Card 1: Precision Farming -->
+        <article class="relative min-h-[300px] rounded-[22px] overflow-hidden p-[27px] bg-[#a9bd91]">
+          <div class="absolute inset-0 fake-farm-bg"></div>
+          <div class="absolute z-[2] left-[27px] right-[27px] bottom-[25px] text-white">
+            <span class="text-[9px] text-white/[.65]">01</span>
+            <h3 class="font-display text-[25px] mt-[8px]">Precision Farming</h3>
+          </div>
+        </article>
+
+        <!-- Card 2: Data-driven -->
+        <article class="relative min-h-[300px] rounded-[22px] overflow-hidden p-[27px] bg-[#c9dbab]">
+          <span class="text-[9px] text-[#638b2d]">02</span>
+          <div class="text-[45px] text-green mt-[65px]">⌁</div>
+          <h3 class="font-display text-[25px] mt-[8px]">Data-driven<br>decisions.</h3>
+          <p class="text-[11px] leading-[1.6] text-[#728083] mt-[12px] max-w-[210px]">Transform field data into practical actions.</p>
+        </article>
+
+        <!-- Card 3: Sustainable -->
+        <article class="relative min-h-[300px] rounded-[22px] overflow-hidden p-[27px] bg-dark text-white">
+          <span class="text-[9px] text-[#78919a]">03</span>
+          <div class="text-[45px] text-green mt-[65px]">◌</div>
+          <h3 class="font-display text-[25px] mt-[8px]">Sustainable<br>growth.</h3>
+          <p class="text-[11px] leading-[1.6] text-white/[.42] mt-[12px] max-w-[210px]">Use resources more efficiently, every season.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========== TECHNOLOGY ========== -->
+    <section class="py-[120px] max-[650px]:py-[85px] px-[9%] max-[650px]:px-[7%] bg-dark text-white" id="technology">
+      <div class="text-[9px] tracking-[2px] text-white/[.38] font-bold mb-[55px]">02 — TECHNOLOGY</div>
+
+      <div class="grid grid-cols-[1fr_.55fr] max-[900px]:grid-cols-1 max-[900px]:gap-[30px] gap-[80px] items-end mb-[70px]">
+        <h2 class="font-display text-[clamp(47px,5vw,72px)] leading-[.98] tracking-[-3px] font-semibold">
+          Technology<br>that <span class="text-green">works for you.</span>
+        </h2>
+        <p class="text-white/[.45] text-[13px] leading-[1.8]">
+          One intelligent ecosystem connecting your fields,
+          your data and your decisions.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-3 max-[900px]:grid-cols-1 border-t border-white/[.13]">
+        <article class="min-h-[280px] p-[28px] border-r border-white/[.13] max-[900px]:border-r-0 max-[900px]:border-b max-[900px]:border-white/[.13] relative">
+          <span class="text-[9px] text-green">01</span>
+          <h3 class="font-display mt-[100px] text-[24px]">Artificial Intelligence</h3>
+          <p class="text-white/[.40] text-[11px] leading-[1.6] max-w-[250px] mt-[10px]">Predict, analyze and optimize agricultural operations.</p>
+          <b class="absolute right-[28px] bottom-[28px] text-green font-normal">↗</b>
+        </article>
+        <article class="min-h-[280px] p-[28px] border-r border-white/[.13] max-[900px]:border-r-0 max-[900px]:border-b max-[900px]:border-white/[.13] relative">
+          <span class="text-[9px] text-green">02</span>
+          <h3 class="font-display mt-[100px] text-[24px]">Smart Sensors</h3>
+          <p class="text-white/[.40] text-[11px] leading-[1.6] max-w-[250px] mt-[10px]">Monitor soil, crops and environmental conditions in real time.</p>
+          <b class="absolute right-[28px] bottom-[28px] text-green font-normal">↗</b>
+        </article>
+        <article class="min-h-[280px] p-[28px] relative">
+          <span class="text-[9px] text-green">03</span>
+          <h3 class="font-display mt-[100px] text-[24px]">Digital Dashboard</h3>
+          <p class="text-white/[.40] text-[11px] leading-[1.6] max-w-[250px] mt-[10px]">Control your farm through a simple connected interface.</p>
+          <b class="absolute right-[28px] bottom-[28px] text-green font-normal">↗</b>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========== SOLUTIONS ========== -->
+    <section class="py-[125px] max-[650px]:py-[85px] px-[9%] max-[650px]:px-[7%]" id="solutions">
+      <div class="text-[9px] tracking-[2px] text-[#8a9698] font-bold mb-[55px]">03 — SOLUTIONS</div>
+      <h2 class="font-display text-[clamp(48px,5.5vw,78px)] leading-[.94] tracking-[-4px] mb-[80px] font-semibold">
+        SMART FARMING<br><span class="text-[#88ae3b]">SOLUTIONS</span>
+      </h2>
+
+      <div class="grid grid-cols-[65px_1fr_1fr_30px] max-[650px]:grid-cols-[35px_1fr_25px] gap-[20px] items-center py-[28px] max-[650px]:py-0 border-t border-ink/[.14] max-[650px]:gap-[10px]">
+        <span class="text-[10px] text-[#899598]">01</span>
+        <h3 class="font-display text-[25px] max-[650px]:text-[18px]">Crop Monitoring</h3>
+        <p class="text-[11px] text-[#7b888b] max-[650px]:hidden">Know what is happening in every part of your field.</p>
+        <b class="text-green2 font-normal">↗</b>
+      </div>
+      <div class="grid grid-cols-[65px_1fr_1fr_30px] max-[650px]:grid-cols-[35px_1fr_25px] gap-[20px] items-center py-[28px] max-[650px]:py-0 border-t border-ink/[.14] max-[650px]:gap-[10px]">
+        <span class="text-[10px] text-[#899598]">02</span>
+        <h3 class="font-display text-[25px] max-[650px]:text-[18px]">Predictive Analytics</h3>
+        <p class="text-[11px] text-[#7b888b] max-[650px]:hidden">Anticipate crop needs and make faster decisions.</p>
+        <b class="text-green2 font-normal">↗</b>
+      </div>
+      <div class="grid grid-cols-[65px_1fr_1fr_30px] max-[650px]:grid-cols-[35px_1fr_25px] gap-[20px] items-center py-[28px] max-[650px]:py-0 border-t border-b border-ink/[.14] max-[650px]:gap-[10px]">
+        <span class="text-[10px] text-[#899598]">03</span>
+        <h3 class="font-display text-[25px] max-[650px]:text-[18px]">Resource Optimization</h3>
+        <p class="text-[11px] text-[#7b888b] max-[650px]:hidden">Reduce water, energy and input waste.</p>
+        <b class="text-green2 font-normal">↗</b>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT / CTA ========== -->
+    <section class="mx-[4%] py-[80px] max-[650px]:py-[65px] px-[7%] max-[650px]:px-[8%] min-h-[500px] max-[650px]:min-h-[420px] rounded-[34px] bg-[#173d43] text-white relative overflow-hidden contact-glow" id="contact">
+      <div class="text-[9px] tracking-[2px] text-white/[.38] font-bold mb-[55px] relative z-[2]">04 — GET STARTED</div>
+      <h2 class="relative z-[2] font-display text-[clamp(52px,6vw,86px)] leading-[.93] tracking-[-4px] mb-[45px] font-semibold">
+        Grow smarter.<br><span class="text-green">Grow better.</span>
+      </h2>
+      <a class="relative z-[2] inline-flex items-center gap-[14px] bg-green text-[#183037] py-[13px] px-[19px] rounded-full text-xs font-bold hover:-translate-y-0.5 hover:brightness-110 transition-all" href="mailto:hello@farmiq.example">
+        Start with FarmIQ <span>↗</span>
+      </a>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="min-h-[125px] py-[45px] max-[650px]:py-[40px] px-[9%] max-[650px]:px-[7%] flex max-[650px]:flex-col max-[650px]:items-start max-[650px]:gap-[18px] justify-between items-center text-[#8a9698] text-[10px]">
+      <a href="#home" class="flex items-center gap-[10px] font-display font-bold text-[23px] text-ink">
+        <span class="brand-icon-wrap"><i></i><b></b></span>
+        <span>Farm<span class="text-green">IQ</span></span>
+      </a>
+      <span>Smart technology. Better agriculture.</span>
+      <span>© 2026 FarmIQ</span>
+    </footer>
+
+  </div>
+</body>
+</html>
