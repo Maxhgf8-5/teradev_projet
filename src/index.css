@@ -27,15 +27,6 @@ a {
   color: inherit;
 }
 
-.hero-grid-pattern {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.16) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.16) 1px, transparent 1px);
-  background-size: 70px 70px;
-  -webkit-mask-image: linear-gradient(90deg, black, transparent 85%);
-  mask-image: linear-gradient(90deg, black, transparent 85%);
-}
-
 .hero-overlay-gradient {
   background:
     linear-gradient(90deg, rgba(5, 24, 30, 0.96) 0%, rgba(7, 28, 34, 0.82) 34%, rgba(7, 28, 34, 0.22) 66%, rgba(7, 28, 34, 0.12) 100%),

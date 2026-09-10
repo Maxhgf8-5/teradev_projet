@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import robotGlobe from "./assets/robot-globe.jpg";
 
 function BubbleField() {
   const bubbles = [
@@ -509,10 +510,9 @@ function App() {
       >
         <div
           className="absolute inset-0 bg-cover bg-center scale-[1.03]"
-          style={{ backgroundImage: "url('/images/robot-globe.jpg')" }}
+          style={{ backgroundImage: `url(${robotGlobe})` }}
         ></div>
         <div className="absolute inset-0 hero-overlay-gradient"></div>
-        <div className="absolute inset-0 opacity-[.13] hero-grid-pattern"></div>
 
         <div className="relative z-[3] min-h-[660px] px-[7%] max-[650px]:px-[6%] pt-[75px] max-[650px]:pt-[55px] pb-[20px] grid grid-cols-2 max-[900px]:grid-cols-1 items-center">
           <div className="mt-[-20px]"> 

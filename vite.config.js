@@ -7,7 +7,7 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   plugins: [react(),    tailwindcss(),],
-  base: '/TERADEV',
+  base: '/teradev_projet/',
 
   server: {
     host: '0.0.0.0',
